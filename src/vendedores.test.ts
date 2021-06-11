@@ -11,7 +11,7 @@ describe("Vendedores", () => {
       const vendedorFijo = new VendedorFijo(sierra);
 
       it("en la ciudad donde vive", () => {
-        expect(vendedorFijo.puedeTrabajarEn(sierra)).toBeTruthy();
+        expect(vendedorFijo.puedeTrabajarEn(sierra)).toBeFalsy();
       });
 
       it("en otra ciudad", () => {
