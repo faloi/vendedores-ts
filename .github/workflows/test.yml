@@ -13,8 +13,6 @@ jobs:
       - run: npx jest --ci --reporters=default --reporters=jest-junit
       - uses: reviewdog/action-eslint@v1
         if: always()
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
       # - uses: tanmen/jest-reporter@v1
       #   if: always()
       #   with:

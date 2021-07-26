@@ -19,7 +19,7 @@ export class Viajante extends Vendedor {
     super();
   }
 
-  puedeTrabajarEn(ciudad: Ciudad): boolean {
+  puedeTrabajarEn(ciudad: any): boolean {
     return any((p) => p == ciudad.provincia, this.provinciasDondeTrabaja);
   }
 }
@@ -27,5 +27,5 @@ export class Viajante extends Vendedor {
 export class Provincia {}
 
 export class Ciudad {
-  constructor(public provincia: Provincia, habitantes = 100) {}
+  constructor(public provincia: Provincia) {}
 }
