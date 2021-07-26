@@ -27,5 +27,5 @@ export class Viajante extends Vendedor {
 export class Provincia {}
 
 export class Ciudad {
-  constructor(public provincia: Provincia) {}
+  constructor(public provincia: Provincia, habitantes = 100) {}
 }
