@@ -1,4 +1,4 @@
-name: Test
+name: CI
 on:
   push:
     branches: [main]
@@ -6,6 +6,7 @@ on:
     branches: [main]
 jobs:
   test:
+    name: Compilar y ejecutar pruebas
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,13 +14,9 @@ jobs:
       - run: npx jest --ci --reporters=default --reporters=jest-junit
       - uses: reviewdog/action-eslint@v1
         if: always()
-      # - uses: tanmen/jest-reporter@v1
-      #   if: always()
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: dorny/test-reporter@v1
         if: always()
         with:
-          name: Tests
+          name: Reporte de pruebas
           path: reports/jest-*.xml
           reporter: jest-junit
